@@ -1,3 +1,9 @@
+/*Purple: #6A2C70 Maroon: #B83B5E Orange: #F08A5D Yellow: #F9ED69*/
+
+* {
+    font-family: "Arial", 'Times new roman', "Georgia"
+}
+
 body,
 html {
     margin: 0;
@@ -12,12 +18,13 @@ body {
 }
 
 .calculator {
-    border: 4px solid black;
+    border: 6px solid #3b0b40;
     width: 400px;
     height: 500px;
     padding: 16px;
-    background-color: lightgray;
+    background-color: #B83B5E;
     border-radius: 10px;
+    box-shadow: 10px 10px 5px rgb(0, 0, 0, 0.7);
 }
 
 .buttons {
@@ -28,10 +35,20 @@ body {
 .display {
     width: auto;
     height: 80px;
-    border: 4px solid black;
+    border: 4px solid #3b0b40;
     border-radius: 10px;
-    background-color: white;
+    background-color: #6A2C70;
+    color: white;
     margin-bottom: 10px;
+    position: relative;
+}
+
+.output {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0 10px 0 0;
+    font-size: 50px;
 }
 
 .numbers {
@@ -46,4 +63,30 @@ body {
     height: auto;
     width: auto;
     border-radius: 10px;
+    font-size: 36px;
+    border-color: #B83B5E;
+    color: white;
+}
+
+.top-buttons {
+    background-color: #6A2C70;
+}
+
+.number {
+    background-color: #F08A5D;
+    border-color: #B83B5E;
+}
+
+#pos-neg,
+#decimal {
+    background-color: #F08A5D;
+}
+
+#equals {
+    background-color: #f2499d;
+}
+
+.side-operator {
+    background-color: #6A2C70;
+    border-color: #B83B5E;
 }
