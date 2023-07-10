@@ -1,22 +1,16 @@
 const operators = Array.from(document.querySelectorAll(".operator"));
-const numbers = Array.from(document.querySelectorAll(".number"));
+let numbers = Array.from(document.querySelectorAll(".number"));
 const output = document.querySelector(".output")
 const clearBtn = document.querySelector("#AC");
-const plusBtn = document.querySelector("#plus");
-const minusBtn = document.querySelector("#minus");
-const divideBtn = document.querySelector("#divide");
-const multiplyBtn = document.querySelector("#multiply");
-const powerBtn = document.querySelector("#power");
-const percentBtn = document.querySelector("#percent");
 const equalsBtn = document.querySelector("#equals");
+const periodBtn = document.querySelector('#decimal');
+const negationBtn = document.querySelector('#pos-neg');
+
+numbers = [...numbers, periodBtn];
 
 let firstNum = '';
 let secondNum = '';
 let operator = '';
-
-const displayNum = () => {
-    output.textContent = firstNum;
-}
 
 numbers.forEach(number => {
     number.addEventListener('click', (e) => {
@@ -27,7 +21,6 @@ numbers.forEach(number => {
             secondNum += e.target.textContent;
             output.textContent = secondNum;
         }
-        console.log(firstNum, operator, secondNum);
     });
 });
 
@@ -74,16 +67,14 @@ const operation = () => {
             break;
     }
     secondNum = '';
-    displayNum();
+    output.textContent = firstNum;
 }
 
 operators.forEach(operatorBtn => {
     operatorBtn.addEventListener('click', (e) => {
         if(operator != '') {
-            operator = e.currentTarget.id;
             operation();
         }
-
         operator = e.currentTarget.id;
     });
     
@@ -92,3 +83,13 @@ operators.forEach(operatorBtn => {
 equalsBtn.onclick = () => {
     operation();
 };
+
+negationBtn.addEventListener('click', () => {
+    if(operator == '') {
+        firstNum = '-' + firstNum;
+        output.textContent = firstNum;
+    } else {
+        secondNum = '-' + secondNum;
+        output.textContent = secondNum;
+    }
+});

@@ -41,7 +41,6 @@ body {
     color: white;
     margin-bottom: 10px;
     position: relative;
-    display: flex;
 }
 
 .output {
@@ -50,8 +49,11 @@ body {
     right: 0;
     margin: 0 10px 0 0;
     font-size: 50px;
+    width: 100%;
     max-width: 350px;
-    flex-shrink: 1;
+    box-sizing: border-box;
+    text-align: right;
+    overflow: hidden;
 }
 
 .numbers {
